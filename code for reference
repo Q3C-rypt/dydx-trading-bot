@@ -1,0 +1,13 @@
+to activate venv enviroment: C:\Users\jacob\Documents\dydx>venv\Scripts\activate
+to install requirement.txt: pip install -r requirement.txt
+
+
+in PowerShell {
+Code to bypass ExecutionPolicy: Set-ExecutionPolicy Bypass -Scope Process
+                                & C:\Users\jacob\Documents\dydx\venv\Scripts\Activate.ps1
+
+Code to reset bypass restrictions: Set-ExecutionPolicy Restricted -Scope Process
+}
+
+To enter program folder: cd program
+To leave program folder or go back to dydx main folder: cd ..
