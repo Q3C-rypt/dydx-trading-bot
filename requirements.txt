@@ -13,7 +13,7 @@ dateparser==1.0.0
 distlib==0.3.6
 dydx-v3-python==1.9.1
 ecdsa==0.16.0
-eth-abi==2.2.0
+eth-abi==4.2.1 #upgraded this from 2.2.0
 eth-account==0.5.9
 eth-hash==0.5.1
 eth-keyfile==0.5.1

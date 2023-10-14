@@ -9,5 +9,6 @@ Code to bypass ExecutionPolicy: Set-ExecutionPolicy Bypass -Scope Process
 Code to reset bypass restrictions: Set-ExecutionPolicy Restricted -Scope Process
 }
 
-To enter program folder: cd program
+To enter program folder: cd Program
+To execute a file: python main.py or whatever file you want
 To leave program folder or go back to dydx main folder: cd ..
