@@ -5,13 +5,16 @@ from decouple import config
 MODE = "TESTING"
 
 #Close all open positions and orders
-ABORT_ALL_POSITIONS = False #true would close all positions
+ABORT_ALL_POSITIONS = True #true would close all positions
 
 #Find cointegrated pairs
-FIND_COINTEGRATED = True 
+FIND_COINTEGRATED = False
 
 #place trade
-PLACE_TRADE = True
+PLACE_TRADES = False
+
+#Exit trades
+MANAGE_EXITS = False
 
 #Resolution
 RESOLUTION = "1HOUR" #candlestick time
@@ -22,7 +25,7 @@ WINDOW = 21 #21 previous days of stock to look at
 #ThreshHolds - opening trade
 MAX_HALF_LIFE = 24
 ZSCORE_THRESH = 1.5
-USD_PER_TRADE = 50 #trade of 50$
+USD_PER_TRADE = 100 #trade of 100$
 USD_MIN_COLLATERAL = 1875 #reflects how much you have in accounts, min floor to work with so bot doesnt keep trading
 
 #Thresholds - Closing

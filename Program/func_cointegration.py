@@ -3,6 +3,7 @@ import numpy as np
 import statsmodels.api as sm
 from statsmodels.tsa.stattools import coint
 from constants import MAX_HALF_LIFE, WINDOW
+import csv
 
 # Calculate half life
 def calculate_half_life(spread): #Algorithme that returns really good half life spread
@@ -82,3 +83,20 @@ def store_cointegrated_results(df_market_prices):
     # Return result
     print("Cointegrated pairs successfully saved")
     return "saved"
+
+#Filter out FIL-USD
+def rewrite_files(input, output, forbidden):
+    with open(input, 'r', newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        # header = next(reader)
+
+        filtered_rows = [row for row in reader if not any(char in ''.join(row) for char in forbidden)]
+
+    with open(output, 'w', newline= '') as csvfile:
+        writer = csv.writer(csvfile)
+        # writer.writerow(header)
+        writer.writerows(filtered_rows)
+
+    #Print Success
+    print("Successfuly transfered data to output.csv, woohoo")
+    return "savedF"

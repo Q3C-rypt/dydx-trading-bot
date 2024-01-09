@@ -1,12 +1,38 @@
 from constants import RESOLUTION
 from func_utils import get_ISO_times
 import pandas as pd
-# import numpy as np
+import numpy as np
 import time
 from pprint import pprint
 
 # Get relevant time period for ISO from and to
 ISO_TIMES = get_ISO_times()
+
+
+# Get candles recents
+def get_candles_recent(client, market):
+
+    #Define output
+    close_prices = []
+
+    #protect API
+    time.sleep(2)
+
+    #Get data
+    candles = client.public.get_candles(
+        market = market,
+        resolution = RESOLUTION,
+        limit = 100
+    )
+
+    #Strucutre data
+    for candle in candles.data["candles"]:
+        close_prices.append(candle["close"])
+
+    # Construct and return close price series
+    close_prices.reverse()
+    prices_result = np.array(close_prices).astype(np.float64)
+    return prices_result
 
 
 # Get candle Stick data

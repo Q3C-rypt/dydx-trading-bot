@@ -12,7 +12,7 @@ Code to reset bypass restrictions: Set-ExecutionPolicy Restricted -Scope Process
 To enter program folder: cd Program
 To execute a file: python main.py or whatever file you want
 To leave program folder or go back to dydx main folder: cd ..
-
+ 
 To install pip (even within virtual enviroment) python -m ensurepip --upgrade
 To install whatever library: pip install "library name"
 To check if it's installed: python --version ("or whatever you're checking" --version)
@@ -20,3 +20,4 @@ To check if it's installed: python --version ("or whatever you're checking" --ve
 Git hub add: git add .
 Git hub commit: git commit -m "name of stage"
 Git hub push: git push -u origin main
+Git hub create new branch: git checkout -b "NAME OF BRANCH"
